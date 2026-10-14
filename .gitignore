@@ -33,3 +33,8 @@ ios/Flutter/ephemeral/
 # Secrets / environment
 env/*.json
 !env/example.json
+
+# Firebase config (contains API keys) — generate locally, see docs/PRODUCTION_SETUP.md §4
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart

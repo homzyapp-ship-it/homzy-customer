@@ -85,6 +85,8 @@ Also verify in Firebase:
 - Cloud Messaging → backend has the server credentials (service account) for push.
 - Phone auth: Play Integrity API enabled in the Google Cloud project.
 
+**These files are git-ignored** (`android/app/google-services.json`, `lib/firebase_options.dart`, `ios/Runner/GoogleService-Info.plist`) because they contain the Firebase API key. On a fresh clone, download `google-services.json` from the Firebase console and run `flutterfire configure` (below) before building. Keep the Firebase API key **restricted** in Google Cloud Console → Credentials: *Android apps* = `com.homzy.customer` + `com.homzy.seller` with their SHA‑1s; *API restrictions* = only the Firebase APIs the apps use (Identity Toolkit, Token Service, Firebase Installations, FCM Registration, Cloud Messaging).
+
 If you ever change Firebase project, regenerate options with:
 ```bash
 dart pub global activate flutterfire_cli
